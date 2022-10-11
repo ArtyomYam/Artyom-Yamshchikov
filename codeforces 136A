@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+
+int main() 
+{
+	int frnds;
+    std::cin >> frnds;
+	std::vector < std::vector <int> >v(frnds, std::vector <int> (2) );
+	for (int i = 0; i < frnds; i += 1)
+	{
+		std::cin >> v[i][1];
+		v[i][0] = i;
+	}
+	std::vector <int>res(frnds);
+	for (int j = 0; j < frnds; j += 1)
+	{
+		res[v[j - 1][1]] = v[j - 1][0];
+	}
+	for (int k = 0; k < res.size(); k += 1)
+	{
+		std::cout << res[k];
+	}
+}
