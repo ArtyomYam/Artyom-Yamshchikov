@@ -1,0 +1,15 @@
+
+﻿#include <iostream>
+ 
+int main() {
+	int n, k, capacity, max;
+	max = 0;
+	std::cin >> n >> k;
+	for (int i = 0; i < n; i += 1) {
+		std::cin >> capacity;
+		if (k % capacity == 0 && capacity > max) {
+			max = capacity;
+		}
+	}
+	std::cout << k / max;
+}
