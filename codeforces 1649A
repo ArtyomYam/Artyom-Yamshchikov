@@ -1,0 +1,30 @@
+
+﻿#include <iostream>
+ 
+int main() {
+	int t, n, count, spos, epos, p;
+	std::cin >> t;
+	for (int z = 0; z < t; z += 1) {
+		std::cin >> p;
+		epos = 0;
+		spos = 0;
+		count = 0;
+		for (int i = 0; i < p; i += 1) {
+			std::cin >> n;
+			count += 1;
+			if (n == 0 and spos == 0) {
+				spos = count;
+				epos = spos;
+			}
+			if (n == 0 and spos != 0) {
+				epos = count;
+			}
+		}
+		if (spos != 0) {
+			std::cout << ((epos - spos) + 2) << "\n";
+		}
+		else {
+			std::cout << 0 << "\n";
+		}
+	}
+}
