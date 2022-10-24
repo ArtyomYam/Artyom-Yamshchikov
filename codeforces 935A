@@ -1,0 +1,13 @@
+#include <iostream>
+ 
+int main() {
+	int n, count;
+	count = 0;
+	std::cin >> n;
+	for (int i = 1; i < n; i += 1) {
+		if ((n - i) % i == 0) {
+			count += 1;
+		}
+	}
+	std::cout << count;
+}
