@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main() {
+	int x, res;
+	res = 0;
+	std::cin >> x;
+	while (x) {
+		res += (x & 1);
+		x >>= 1;
+	}
+	std::cout << res;
+}
