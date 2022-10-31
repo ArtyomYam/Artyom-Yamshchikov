@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+ 
+int main(){
+	int t, n, count;
+	std::cin >> t;
+	for(int k = 0; k < t; k += 1){
+	    count = 0;
+		std::vector<int>res(100);
+		std::cin >> n;
+		for(int i = 10000; i > 0; i /= 10){
+			if (n / i != 0) {
+				res.push_back((n / i) * i);
+				count += 1;
+				n = n % i;
+			}
+		}
+		std::cout << count << "\n";
+		for(int j = res.size() - 1; j > 0; j -= 1){
+		    if(res[j] != 0){
+			    std::cout << res[j] << " ";
+		    }
+		}
+		std::cout << "\n";
+	}
+}
