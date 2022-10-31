@@ -1,0 +1,14 @@
+﻿#include <iostream>
+ 
+int main() {
+	int length, count;
+	count = 0;
+	std::cin >> length;
+	for (int i = 5; i > 0; i -= 1) {
+		if (length >= i) {
+			count += length / i;
+			length = length % i;
+		}
+	}
+	std::cout << count;
+}
