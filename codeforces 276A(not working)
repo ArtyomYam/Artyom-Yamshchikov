@@ -1,0 +1,17 @@
+﻿#include <iostream>	
+#include <algorithm>
+ 
+int main() {
+	signed int n, k, f, t, ans;
+	std::cin >> n >> k;
+	for (int i = 0; i < n; i += 1) {
+		std::cin >> f >> t;
+		if (t > k) {
+			ans = std::max(ans, f - (t - k));
+		}
+		else {
+			ans = std::max(ans, f);
+		}
+	}
+	std::cout << ans;
+}
