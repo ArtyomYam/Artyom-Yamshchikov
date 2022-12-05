@@ -1,0 +1,43 @@
+#include <iostream>
+
+
+struct Cdec {
+	double re = 0.0;
+	double im = 0.0;
+};
+
+std::ostream& operator<<(std::ostream& ostrm, const Cdec& z);
+
+Cdec& operator+=(Cdec& lhs, const Cdec& rhs);
+
+Cdec& operator+(const Cdec& lhs, const Cdec& rhs);
+
+Cdec& operator-(const Cdec& lhs, const Cdec& rhs);
+
+int main() {
+	Cdec z1{1.5, -5.0};
+	Cdec z2{ 8.2, -1.0 };
+	Cdec z = z1 - z2;
+	std::cout << "z=" << z;
+}
+
+std::ostream& operator<<(std::ostream& ostrm, const Cdec& z	){
+	return ostrm << '(' << z.re << ',' << z.im << ')';
+}
+
+Cdec& operator+=(Cdec& lhs, const Cdec& rhs) {
+	lhs.re += rhs.re;
+	lhs.im += rhs.im;
+	return lhs;
+}
+
+Cdec& operator+(const Cdec& lhs, const Cdec& rhs) {
+	Cdec res = lhs;
+	res += rhs;
+	return res;
+}
+
+Cdec& operator-(const Cdec& lhs, const Cdec& rhs) {
+	Cdec res = { lhs.re - rhs.re, lhs.im - rhs.im };
+	return res;
+}
