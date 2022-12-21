@@ -1,0 +1,8 @@
+
+project(Gravity)
+
+add_subdirectory("./geom2")
+
+add_executable(Gravity gravitymovement.cpp)
+
+target_link_libraries(Gravity geom)
