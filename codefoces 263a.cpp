@@ -1,0 +1,16 @@
+﻿#include <iostream>
+#include <cmath>
+
+int main() {
+    int y, x, numb;
+    for (int i = 1; i < 6; i += 1) {
+        for (int j = 1; j < 6; j += 1) {
+            std::cin >> numb;
+            if (numb == 1) {
+                y = i;
+                x = j;
+            }
+        }
+    } 
+    std::cout << abs(3 - x) + abs(3 - y);
+}
